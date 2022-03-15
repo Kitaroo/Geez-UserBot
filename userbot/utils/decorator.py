@@ -10,7 +10,6 @@ from pathlib import Path
 from telethon import events
 
 from userbot import (
-    BL_CHAT,
     CMD_HANDLER,
     CMD_LIST,
     LOAD_PLUG,
@@ -37,11 +36,6 @@ def geez_cmd(
 
     if "disable_edited" in args:
         del args["disable_edited"]
-
-    args["blacklist_chats"] = True
-    black_list_chats = list(BL_CHAT)
-    if len(black_list_chats) > 0:
-        args["chats"] = black_list_chats
 
     if pattern is not None:
         global geez_reg
